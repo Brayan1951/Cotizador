@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 import { Find_by_Ruc } from '../db/findbyCliente'
+import ListClientesPage from './ListClientesPage'
+import useForm from '../hooks/useForm'
+import { Find_by_Codigo } from '../db/findByProduct'
+import ListProduct from '../components/product/listProduct'
 
-export default function CotizadorPage({ match }) {
+export default function CotizadorPage() {
   const { id_client } = useParams()
   const [Cliente, setCliente] = useState()
+  
+  const {codigo,changeForm}=useForm({codigo:''})
+const [products, setproducts] = useState([])
+
+
   useEffect(() => {
     const temp_cliente = Find_by_Ruc(id_client)
     setCliente(
@@ -13,9 +22,11 @@ export default function CotizadorPage({ match }) {
 
   }, [id_client])
 
-  const temp = () => {
+  const obtenerProduct = () => {
+    const temp_product=Find_by_Codigo(codigo)
+    setproducts(temp_product)
 
-    console.log(Cliente);
+
   }
 
 
@@ -25,18 +36,15 @@ export default function CotizadorPage({ match }) {
         Cliente ? (<h2>Cotizador al cliente {Cliente.nombre} - {Cliente.ruc}</h2>)
           : <div>No existe cliente</div>
       }
-      <button onClick={temp}>log</button>
+      <button onClick={obtenerProduct}>log</button>
       <hr />
 
       <div>
-      <input class="form-control" type="text" placeholder="Agregar producto" aria-label="default input example"/>
-        <ul className="list-group">
-          <li className="list-group-item">An item</li>
-          <li className="list-group-item">A second item</li>
-          <li className="list-group-item">A third item</li>
-          <li className="list-group-item">A fourth item</li>
-          <li className="list-group-item">And a fifth one</li>
-        </ul>
+      <input className="form-control" name='codigo' value={codigo} type="text" placeholder="Agregar producto"  onChange={changeForm}/>
+
+  
+
+      <ListProduct products={products} />
 
 
       </div>

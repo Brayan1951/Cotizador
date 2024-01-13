@@ -16,7 +16,6 @@ export default function ListClientesPage() {
 
     setclientes(temp)
 
-    console.log(clientes);
 
 }
 
