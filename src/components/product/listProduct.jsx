@@ -1,8 +1,11 @@
 import React from 'react'
 
-export default function ListProduct({ products = [] }) {
+export default function ListProduct({ products = [] ,agregarListProduct}) {
 
-  console.log(products);
+  const agregar=(codigo)=>{
+    agregarListProduct(codigo)
+  }
+
 
   return (
     <div >
@@ -17,7 +20,18 @@ export default function ListProduct({ products = [] }) {
 
                 {
 
-                  products.map((product,i) => { return <li key={i} className="list-group-item">{product.codigo} - {product.descripcion}</li> })
+                  products.map((product,i) => { 
+                     
+                   return ( 
+                   <div key={i} className='d-flex justify-content-between mt-2 '>
+
+                   <li key={`li-${i}`} className="list-group-item">
+                      {product.codigo} - {product.descripcion}
+                    </li> 
+                    <button key={`b-${i}`} onClick={()=>agregar(product)}>agregar</button>
+                   </div>
+                    )
+                  })
 
 
                 }

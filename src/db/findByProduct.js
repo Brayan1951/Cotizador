@@ -35,7 +35,6 @@ const Productos=[
 const Find_by_Codigo=(codigo)=>{
 
     const filter_codigo=Productos.filter((val)=>(val["codigo"].startsWith(codigo)))
-    console.log(filter_codigo);
     return filter_codigo
     
 }
