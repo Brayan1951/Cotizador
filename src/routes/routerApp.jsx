@@ -15,6 +15,10 @@ export default function routerApp() {
                 , { path: 'cotizador/:id_client', element: <CotizadorPage /> }
             ]
         },
+        {
+            path:'*', element:<MenuApp/>
+        }
+        
     ])
 
     return router
