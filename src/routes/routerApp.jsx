@@ -6,16 +6,16 @@ import MenuApp from '../pages/MenuApp'
 
 export default function routerApp() {
 
-     const router=createBrowserRouter([
+    const router = createBrowserRouter([
         {
-            path:'/',element:<MenuApp/>,
-        children:[
+            path: '/', element: <MenuApp />,
+            children: [
 
-            {path:'/',element:<ListClientesPage/>}
-            ,{path:'cotizador/:id_client',element:<CotizadorPage/>}
-     ]
-    },
-     ])
+                { path: '/', element: <ListClientesPage /> }
+                , { path: 'cotizador/:id_client', element: <CotizadorPage /> }
+            ]
+        },
+    ])
 
-     return router
+    return router
 }
