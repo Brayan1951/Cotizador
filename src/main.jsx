@@ -5,5 +5,5 @@ import { RouterProvider } from 'react-router-dom'
 import routerApp from './routes/routerApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <RouterProvider router={routerApp()} />
+    <RouterProvider  router={routerApp()} />
     )

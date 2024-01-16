@@ -5,6 +5,7 @@ import ListClientesPage from './ListClientesPage'
 import useForm from '../hooks/useForm'
 import { Find_by_Codigo } from '../db/findByProduct'
 import ListProduct from '../components/product/listProduct'
+import { temp_excel } from '../db/getExcel'
 
 export default function CotizadorPage() {
   const { id_client } = useParams()
@@ -57,7 +58,7 @@ export default function CotizadorPage() {
   }
 
   const obtenerExcel=()=>{
-    console.log(listaProduct);
+    temp_excel(listaProduct)
   }
 
   return (
