@@ -49,9 +49,10 @@ export default function CotizadorPage() {
     )
   }
   const setPrecioCarrito=(id,nuevoPrecio)=>{
+    const temp_precio=parseFloat(nuevoPrecio)
     setListaProduct((prev)=>
     prev.map((produ,i)=>
-      i==id?{...produ,precio:nuevoPrecio}:produ
+      i==id?{...produ,precio:temp_precio}:produ
     )
     
     )
