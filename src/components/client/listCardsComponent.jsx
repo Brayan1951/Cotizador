@@ -1,18 +1,20 @@
-import {CardComponent}from './cardComponent'
+import { CardComponent } from './cardComponent'
 
-export const ListCardsComponent=({clientes})=>{
-    console.log(clientes);
+export const ListCardsComponent = ({ clientes=[] }) => {
+    // console.log(clientes);
+    if (clientes) {
+        
+    return (<div className='m-5'>
+        {
+            clientes.map((cliente, i) => {
 
-return <div className='m-5'>
-{
-clientes.map((cliente,i)=>{
-
-    return <CardComponent key={i} cliente={cliente}/>
-}
-)
-}
+                return <CardComponent key={i} cliente={cliente} />
+            }
+            )
+        }
 
 
-</div>
-
+    </div>)
+    }
+    else return <h2>No hay nada</h2>
 }

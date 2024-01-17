@@ -7,9 +7,9 @@ export const  CardComponent=({cliente}) =>{
     return (
     <div>
 
-        <h3>
+        <h4>
             {ruc}-{nombre}
-        </h3>
+        </h4>
         <Link to={`cotizador/${ruc}`}>Cotizar</Link>
         <hr />
 

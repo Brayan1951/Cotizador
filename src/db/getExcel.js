@@ -1,10 +1,10 @@
 import axios from "axios";
 
+const baseref='https://cotizador-example-1.onrender.com'
+// const baseref='http://127.0.0.1:8000'
 export const temp_excel=async(datos)=>{
 
-    const baseref='https://cotizador-example-1.onrender.com'
     console.log(datos);
-    // const baseref='http://127.0.0.1:8000'
     const response = await axios.post(`${baseref}/excel/generar_excel`,datos,{
         responseType: 'arraybuffer',  // Para manejar archivos binarios (Excel)
     })
@@ -20,3 +20,4 @@ export const temp_excel=async(datos)=>{
 
     
 }
+

@@ -9,10 +9,11 @@ export default function ListClientesPage() {
   const [clientes, setclientes] = useState([])
 
 
-  const buscar=(e)=>{
+  const buscar=async(e)=>{
     e.preventDefault()
 
-    const temp=Find_by_Name(name)
+    const temp=await Find_by_Name(name)
+    // console.log(temp);
 
     setclientes(temp)
 
@@ -27,8 +28,13 @@ export default function ListClientesPage() {
     <input type="text" name='name' className='' value={name} onChange={changeForm} />
     <button className='btn ' onClick={buscar}>buscar</button>
         </form>
-
-        <ListCardsComponent  clientes={clientes}/>
+        {
+          (clientes.length>0)? (
+            
+            <ListCardsComponent  clientes={clientes}/>
+          )
+          :(<h1>no hay nada</h1>)
+        }
 
     </div>
   )
