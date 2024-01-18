@@ -7,6 +7,7 @@ export default function MenuApp() {
         
         <Link to={"./"}>Home</Link>
         <hr />
+        
         <Outlet/>
 
 
