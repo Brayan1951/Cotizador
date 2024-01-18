@@ -126,9 +126,12 @@ export default function CotizadorPage() {
     )
   }
 
-  const changeKam=(id)=>{
+  const changeKam=(event)=>{
+    const id=event.target.value
+    console.log(id);
+    console.log(ejecutivos[id])
     setkam(ejecutivos[id])
-    console.log(kam);
+    console.log(ejecutivos[id]);
   }
 
   const obtenerExcel = () => {
@@ -153,11 +156,11 @@ export default function CotizadorPage() {
                   <h4>
                     Cotizando al cliente por
                   </h4>
-                  <select onChange={(e)=>{changeKam(e.target.value)}} name="ejecutivo" className='p-2' id='1' >
+                  <select onChange={changeKam} name="ejecutivo" className='p-2' >
                     {
                       ejecutivos ?
-                      ejecutivos.map((val) => (
-                        <option id={val.id} value={val.id-1} >{val.nombre}</option>
+                      ejecutivos.map((val,i) => (
+                        <option id={i} value={i} >{val.nombre}</option>
                         ))
                         :
                         <option key={1}>no hay</option>

@@ -3,6 +3,7 @@ import axios from "axios";
 const baseref='https://cotizador-example-1.onrender.com'
 // const baseref='http://127.0.0.1:8000'
 export const temp_excel=async(kam,cliente,producto)=>{
+    console.log(kam);
     const datos={
         ejecutivo:{...kam},
         cliente:{...cliente,direccion:"av brasilon"},
