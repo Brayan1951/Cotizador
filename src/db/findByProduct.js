@@ -1,40 +1,5 @@
 import axios from "axios";
 
-
-const Productos=[
-    {
-        codigo:"1",
-        codigo_sap:"A1",
-        descripcion:"celular",
-    },
-    {
-        codigo:"2",
-        codigo_sap:"A2",
-        descripcion:"teclado",
-    },
-    {
-        codigo:"3",
-        codigo_sap:"A3",
-        descripcion:"mouse",
-    },
-    {
-        codigo:"11",
-        codigo_sap:"A11",
-        descripcion:"laptop",
-    },
-    {
-        codigo:"12",
-        codigo_sap:"A12",
-        descripcion:"audfino",
-    },
-    {
-        codigo:"22",
-        codigo_sap:"A22",
-        descripcion:"scooter",
-    },
-   
-]
-
 const baseref='https://cotizador-example-1.onrender.com'
 // const baseref='http://127.0.0.1:8000'
 

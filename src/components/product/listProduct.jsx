@@ -13,8 +13,6 @@ export default function ListProduct({ products = [] ,agregarListProduct}) {
       {
         products.length > 0 ?
           (
-            <details>
-              <summary>Productos</summary>
 
               <ul className="list-group">
 
@@ -37,7 +35,31 @@ export default function ListProduct({ products = [] ,agregarListProduct}) {
                 }
 
               </ul>
-            </details>
+            // <details>
+            //   <summary>Productos</summary>
+
+            //   <ul className="list-group">
+
+            //     {
+
+            //       products.map((product,i) => { 
+                     
+            //        return ( 
+            //        <div key={i} className='d-flex justify-content-between mt-2 '>
+
+            //        <li key={`li-${i}`} className="list-group-item">
+            //           {product.codigo} - {product.descripcion}
+            //         </li> 
+            //         <button key={`b-${i}`} onClick={()=>agregar(product)}>agregar</button>
+            //        </div>
+            //         )
+            //       })
+
+
+            //     }
+
+            //   </ul>
+            // </details>
 
 
           )

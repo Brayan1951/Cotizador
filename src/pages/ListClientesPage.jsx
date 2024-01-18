@@ -11,10 +11,8 @@ export default function ListClientesPage() {
 
   const buscar=async(e)=>{
     e.preventDefault()
-
     const temp=await Find_by_Name(name)
     // console.log(temp);
-
     setclientes(temp)
 
 

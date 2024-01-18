@@ -5,12 +5,7 @@ export default function MenuApp() {
   return (
     <div className='container'>
         
-        <h1 className='center m-5'>
-    
-
-        MenuApp
-        </h1>
-        <Link to={"/"}>Home</Link>
+        <Link to={"./"}>Home</Link>
         <hr />
         <Outlet/>
 
