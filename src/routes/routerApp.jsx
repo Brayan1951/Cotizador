@@ -6,6 +6,8 @@ import MenuApp from '../pages/MenuApp'
 
 export default function routerApp() {
 
+    const routerBaseName = '/Cotizador'
+
     const router = createBrowserRouter([
         {
             path: '/', element: <MenuApp />,
@@ -17,9 +19,9 @@ export default function routerApp() {
         },
         {
             path:'*', element:<MenuApp/>
-        }
+        },
         
-    ])
+    ],{basename:routerBaseName})
 
     return router
 }
